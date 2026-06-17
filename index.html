@@ -1,305 +1,522 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
+<title>Mahboob Imtiyaz — Multi-disciplinary Entrepreneur & Full-Stack Developer</title>
+<meta name="description" content="Multi-disciplinary entrepreneur and self-taught full-stack developer working in DeSci, Web3 and DevRel. Taking projects from 0 to double-digit growth.">
+<meta property="og:title" content="Mahboob Imtiyaz — Entrepreneur Profile">
+<meta property="og:description" content="DeSci builder, Web3 / ZK / DiD, 0 → growth across SaaS, hardware, scientific publishing and Web3.">
+<meta property="og:type" content="profile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;background:#08090b;}
-  ::selection{background:#c8ff2e;color:#08090b;}
-  @keyframes glowdrift{0%{transform:translate(-8%,-6%) scale(1);}50%{transform:translate(8%,6%) scale(1.15);}100%{transform:translate(-8%,-6%) scale(1);}}
-  @keyframes hueline{0%{opacity:.35;}50%{opacity:.85;}100%{opacity:.35;}}
-  .reveal{opacity:1;}
-</style>
-</helmet>
-<div style="position:relative;min-height:100vh;background:#08090b;color:#eef0f2;font-family:'Space Grotesk',sans-serif;overflow:hidden;">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="page">
 
-  <!-- ambient glow + grid -->
-  <div style="position:fixed;inset:0;pointer-events:none;z-index:0;">
-    <div style="position:absolute;top:-20%;left:50%;width:90vw;height:70vh;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(200,255,46,0.10),transparent 62%);filter:blur(20px);animation:glowdrift 18s ease-in-out infinite;"></div>
-    <div style="position:absolute;bottom:-10%;right:-10%;width:60vw;height:60vh;background:radial-gradient(ellipse at center,rgba(46,230,255,0.07),transparent 64%);filter:blur(20px);animation:glowdrift 22s ease-in-out infinite reverse;"></div>
-    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 90% 70% at 50% 30%,#000,transparent 90%);-webkit-mask-image:radial-gradient(ellipse 90% 70% at 50% 30%,#000,transparent 90%);"></div>
+  <div class="ambient" aria-hidden="true">
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+    <div class="grid"></div>
   </div>
 
-  <div style="position:relative;z-index:1;">
+  <div class="content">
 
-  <!-- ░░ NAV ░░ -->
-  <nav style="display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:26px 32px;">
-    <div style="display:flex;align-items:center;gap:12px;">
-      <div style="width:10px;height:10px;border-radius:50%;background:#c8ff2e;box-shadow:0 0 12px #c8ff2e;"></div>
-      <span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.04em;font-weight:500;">mahboob.imtiyaz</span>
-    </div>
-    <div style="display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#7b7f88;">
-      <span style="width:7px;height:7px;border-radius:50%;background:#c8ff2e;box-shadow:0 0 8px #c8ff2e;"></span>
-      Open to building
-    </div>
-  </nav>
+    <nav class="nav">
+      <div class="nav-brand">
+        <span class="dot"></span>
+        <span>mahboob.imtiyaz</span>
+      </div>
+      <div class="nav-status">
+        <span class="dot"></span>
+        Open to building
+      </div>
+    </nav>
 
-  <!-- ░░ HERO ░░ -->
-  <header style="max-width:1200px;margin:0 auto;padding:48px 32px 60px;display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:center;">
-    <div>
-      <div style="display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#c8ff2e;margin-bottom:26px;">
-        <span style="display:block;width:28px;height:1px;background:#c8ff2e;"></span>Redefining #DeSci
-      </div>
-      <h1 style="margin:0;font-size:clamp(44px,6.4vw,84px);line-height:0.96;font-weight:700;letter-spacing:-0.02em;">
-        Mahboob<br><span style="color:#c8ff2e;text-shadow:0 0 36px rgba(200,255,46,0.35);">Imtiyaz</span>
-      </h1>
-      <p style="margin:28px 0 0;max-width:540px;font-size:clamp(16px,1.5vw,19px);line-height:1.55;color:#b9bdc6;">
-        Multi-disciplinary entrepreneur &amp; self-taught full-stack developer. I take projects from <span style="color:#eef0f2;font-weight:600;">0 to double-digit growth</span> — across SaaS, hardware, scientific publishing, Web3 and DeSci.
-      </p>
-      <div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:28px;">
-        <sc-for list="{{ tags }}" as="t" hint-placeholder-count="5">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#cfd3da;padding:7px 13px;border:1px solid rgba(255,255,255,0.13);border-radius:100px;background:rgba(255,255,255,0.02);">{{ t }}</span>
-        </sc-for>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:36px;">
-        <a href="https://cal.com/mahboob/secret" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:#c8ff2e;color:#08090b;font-weight:700;font-size:15px;padding:15px 26px;border-radius:100px;text-decoration:none;box-shadow:0 0 0 0 rgba(200,255,46,0.5);transition:box-shadow .25s,transform .25s;" style-hover="transform:translateY(-2px);box-shadow:0 10px 34px rgba(200,255,46,0.32);">
-          Let's Get Building!! <span style="font-family:'JetBrains Mono',monospace;">↗</span>
-        </a>
-        <a href="mailto:mahboob.imtiyaz@gmail.com" style="display:inline-flex;align-items:center;gap:9px;color:#cfd3da;font-size:15px;padding:15px 22px;border-radius:100px;border:1px solid rgba(255,255,255,0.14);text-decoration:none;transition:border-color .2s,color .2s;" style-hover="border-color:#c8ff2e;color:#fff;">
-          Email me
-        </a>
-      </div>
-    </div>
-
-    <div style="display:flex;flex-direction:column;align-items:center;gap:20px;">
-      <div style="position:relative;width:300px;max-width:100%;height:380px;border-radius:22px;padding:1px;background:linear-gradient(150deg,rgba(200,255,46,0.6),rgba(46,230,255,0.35),transparent 60%);box-sizing:border-box;">
-        <img src="./headshot.png" alt="Mahboob Imtiyaz" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;border-radius:21px;background:#0e1013;">
-        <div style="position:absolute;-bottom:0;bottom:14px;left:14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#08090b;background:#c8ff2e;padding:5px 9px;border-radius:6px;font-weight:700;">India · Malaysia</div>
-      </div>
-      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#7b7f88;letter-spacing:0.06em;text-align:center;line-height:1.7;">
-        Bengaluru → Dubai → Boise<br>San Francisco → Johor Bahru
-      </div>
-    </div>
-  </header>
-
-  <!-- ░░ STATS ░░ -->
-  <section style="max-width:1200px;margin:0 auto;padding:0 32px;">
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;">
-      <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
-        <div style="background:#0b0c0f;padding:30px 26px;">
-          <div style="font-size:clamp(30px,3.4vw,46px);font-weight:700;letter-spacing:-0.02em;color:#c8ff2e;line-height:1;">{{ s.num }}</div>
-          <div style="margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8c909a;">{{ s.label }}</div>
+    <header class="hero">
+      <div>
+        <div class="eyebrow">
+          <span class="rule"></span>Redefining #DeSci
         </div>
-      </sc-for>
-    </div>
-    <div style="margin-top:18px;display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#8c909a;">
-      <span style="color:#2ee6ff;">◆</span> Selected <span style="color:#cfd3da;">Top 30 Under 30 Leaders of Tomorrow</span> — GapSummit, UK.
-    </div>
-  </section>
+        <h1>Mahboob<br><span class="accent">Imtiyaz</span></h1>
+        <p>Multi-disciplinary entrepreneur &amp; self-taught full-stack developer. I take projects from <span class="emph">0 to double-digit growth</span> — across SaaS, hardware, scientific publishing, Web3 and DeSci.</p>
+        <div class="tags">
+          <span class="tag">DeSci Builder</span>
+          <span class="tag">DevRel &amp; Community Engineering</span>
+          <span class="tag">Full-Stack · self-taught</span>
+          <span class="tag">Web3 · ZK · DiD</span>
+          <span class="tag">0 → Growth</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn-primary" href="https://cal.com/mahboob/secret" target="_blank" rel="noopener">
+            Let's Get Building!! <span class="btn-arrow">↗</span>
+          </a>
+          <a class="btn-ghost" href="mailto:mahboob.imtiyaz@gmail.com">Email me</a>
+        </div>
+      </div>
 
-  <!-- ░░ CURRENTLY BUILDING ░░ -->
-  <section style="max-width:1200px;margin:0 auto;padding:96px 32px 0;">
-    <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:36px;">
-      <h2 style="margin:0;font-size:clamp(28px,3.4vw,42px);font-weight:700;letter-spacing:-0.02em;">Currently Building</h2>
-      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#7b7f88;">// active portfolio</span>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
-      <sc-for list="{{ building }}" as="v" hint-placeholder-count="5">
-        <a href="{{ v.href }}" target="_blank" class="reveal" style="display:flex;flex-direction:column;gap:14px;text-decoration:none;color:inherit;background:linear-gradient(160deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.09);border-radius:18px;padding:28px;transition:border-color .25s,transform .25s,background .25s;" style-hover="border-color:rgba(200,255,46,0.5);transform:translateY(-4px);background:linear-gradient(160deg,rgba(200,255,46,0.07),rgba(255,255,255,0.012));">
-          <div style="display:flex;align-items:center;justify-content:space-between;">
-            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#08090b;background:#c8ff2e;padding:5px 10px;border-radius:100px;font-weight:700;">{{ v.tag }}</span>
-            <span style="font-family:'JetBrains Mono',monospace;font-size:18px;color:#7b7f88;">↗</span>
+      <div class="hero-image-col">
+        <div class="hero-frame">
+          <img src="./headshot.png" alt="Mahboob Imtiyaz">
+          <div class="hero-badge">India · Malaysia</div>
+        </div>
+        <div class="hero-route">
+          Bengaluru → Dubai → Boise<br>San Francisco → Johor Bahru
+        </div>
+      </div>
+    </header>
+
+    <section class="stats-wrap">
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-num">20+</div>
+          <div class="stat-label">Ventures founded &amp; built</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">16 yrs</div>
+          <div class="stat-label">Shipping 0 → 1</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">1</div>
+          <div class="stat-label">Acquisition (Zraya)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Continents operated</div>
+        </div>
+      </div>
+      <div class="recognition">
+        <span class="gem">◆</span>
+        <span>Selected <strong>Top 30 Under 30 Leaders of Tomorrow</strong> — GapSummit, UK.</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Currently Building</h2>
+        <span class="label">// active portfolio</span>
+      </div>
+      <div class="cards-2">
+        <a class="venture" href="https://unblockresearch.com" target="_blank" rel="noopener">
+          <div class="venture-top">
+            <span class="venture-tag">DeSci</span>
+            <span class="venture-arrow">↗</span>
           </div>
           <div>
-            <div style="font-size:23px;font-weight:700;letter-spacing:-0.01em;">{{ v.name }}</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#2ee6ff;margin-top:4px;">{{ v.url }}</div>
+            <div class="venture-name">Unblock Research</div>
+            <div class="venture-url">unblockresearch.com</div>
           </div>
-          <p style="margin:0;font-size:15px;line-height:1.55;color:#b3b7c0;">{{ v.desc }}</p>
+          <p class="venture-desc">Decentralized identity &amp; research platform — fixing the issues that have ailed research for the past 100 years.</p>
         </a>
-      </sc-for>
-    </div>
-  </section>
-
-  <!-- ░░ TIMELINE ░░ -->
-  <section style="max-width:1200px;margin:0 auto;padding:96px 32px 0;">
-    <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:44px;">
-      <h2 style="margin:0;font-size:clamp(28px,3.4vw,42px);font-weight:700;letter-spacing:-0.02em;">The Full Build Log</h2>
-      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#7b7f88;">// 2010 → present</span>
-    </div>
-    <div style="position:relative;padding-left:30px;">
-      <div style="position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:linear-gradient(180deg,#c8ff2e,rgba(46,230,255,0.5),rgba(255,255,255,0.08));"></div>
-      <sc-for list="{{ timeline }}" as="j" hint-placeholder-count="10">
-        <div class="reveal" style="position:relative;padding:0 0 38px;">
-          <div style="position:absolute;left:-30px;top:5px;width:11px;height:11px;border-radius:50%;background:{{ j.dot }};box-shadow:0 0 0 4px #08090b,0 0 12px {{ j.glow }};"></div>
-          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 16px;">
-            <span style="font-size:20px;font-weight:700;letter-spacing:-0.01em;">{{ j.company }}</span>
-            <sc-if value="{{ j.badge }}" hint-placeholder-val="acquired">
-              <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#c8ff2e;border:1px solid rgba(200,255,46,0.4);padding:3px 8px;border-radius:100px;">{{ j.badge }}</span>
-            </sc-if>
+        <a class="venture" href="https://endangered.dev" target="_blank" rel="noopener">
+          <div class="venture-top">
+            <span class="venture-tag">Managing Director</span>
+            <span class="venture-arrow">↗</span>
           </div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#8c909a;">
-            <span style="color:#cfd3da;">{{ j.role }}</span>
-            <span>{{ j.period }}</span>
-            <span>{{ j.location }}</span>
+          <div>
+            <div class="venture-name">Endangered.dev</div>
+            <div class="venture-url">endangered.dev</div>
           </div>
-          <p style="margin:12px 0 0;max-width:760px;font-size:14.5px;line-height:1.6;color:#9ca0aa;">{{ j.desc }}</p>
-          <sc-if value="{{ j.wins }}" hint-placeholder-val="{{ true }}">
-            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;">
-              <sc-for list="{{ j.wins }}" as="w" hint-placeholder-count="2">
-                <span style="display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#2ee6ff;border:1px solid rgba(46,230,255,0.35);background:rgba(46,230,255,0.05);padding:6px 11px;border-radius:100px;">◆ {{ w }}</span>
-              </sc-for>
-            </div>
-          </sc-if>
-        </div>
-      </sc-for>
-    </div>
-  </section>
-
-  <!-- ░░ CORPORATE EXPERIENCE ░░ -->
-  <section style="max-width:1200px;margin:0 auto;padding:84px 32px 0;">
-    <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:28px;">
-      <h2 style="margin:0;font-size:clamp(24px,2.8vw,34px);font-weight:700;letter-spacing:-0.02em;">Corporate Experience</h2>
-      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#7b7f88;">// enterprise track</span>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
-      <sc-for list="{{ corporate }}" as="co" hint-placeholder-count="2">
-        <div style="background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:26px;">
-          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;">
-            <span style="font-size:19px;font-weight:700;letter-spacing:-0.01em;">{{ co.company }}</span>
-          </div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#8c909a;">
-            <span style="color:#cfd3da;">{{ co.role }}</span>
-            <span>{{ co.period }}</span>
-            <span>{{ co.location }}</span>
-          </div>
-          <p style="margin:12px 0 0;font-size:14.5px;line-height:1.6;color:#9ca0aa;">{{ co.desc }}</p>
-        </div>
-      </sc-for>
-    </div>
-  </section>
-
-  <!-- ░░ SKILLS / LANGUAGES / EDU ░░ -->
-  <section style="max-width:1200px;margin:0 auto;padding:88px 32px 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
-    <div style="background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:28px;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#c8ff2e;margin-bottom:20px;">Top Skills</div>
-      <sc-for list="{{ skills }}" as="sk" hint-placeholder-count="3">
-        <div style="font-size:16px;font-weight:600;padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.06);">{{ sk }}</div>
-      </sc-for>
-      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#2ee6ff;margin:26px 0 16px;">Certifications</div>
-      <sc-for list="{{ certs }}" as="c" hint-placeholder-count="2">
-        <div style="font-size:14px;color:#b3b7c0;padding:6px 0;">{{ c }}</div>
-      </sc-for>
-    </div>
-
-    <div style="background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:28px;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#c8ff2e;margin-bottom:20px;">Languages</div>
-      <sc-for list="{{ languages }}" as="l" hint-placeholder-count="6">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <span style="font-size:15px;font-weight:600;">{{ l.name }}</span>
-          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8c909a;">{{ l.level }}</span>
-        </div>
-      </sc-for>
-    </div>
-
-    <div style="background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:28px;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#c8ff2e;margin-bottom:20px;">Education</div>
-      <sc-for list="{{ education }}" as="e" hint-placeholder-count="4">
-        <div style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div style="font-size:15px;font-weight:600;line-height:1.3;">{{ e.school }}</div>
-          <div style="font-size:13px;color:#9ca0aa;margin-top:3px;">{{ e.degree }}</div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8c909a;margin-top:3px;">{{ e.years }}</div>
-        </div>
-      </sc-for>
-    </div>
-  </section>
-
-  <!-- ░░ MISSION / CTA ░░ -->
-  <section style="max-width:1200px;margin:0 auto;padding:100px 32px 110px;">
-    <div style="position:relative;border:1px solid rgba(200,255,46,0.25);border-radius:26px;padding:clamp(36px,6vw,72px);background:linear-gradient(150deg,rgba(200,255,46,0.06),rgba(46,230,255,0.04),transparent 70%);overflow:hidden;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#c8ff2e;margin-bottom:24px;">// Mission</div>
-      <p style="margin:0;max-width:860px;font-size:clamp(22px,2.8vw,36px);line-height:1.32;font-weight:600;letter-spacing:-0.01em;">
-        Obsessed with removing the bottlenecks that slow scientific progress — building tools that let researchers, founders and creators move faster. <span style="color:#c8ff2e;">Decentralized is the way.</span>
-      </p>
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:42px;">
-        <a href="https://cal.com/mahboob/secret" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:#c8ff2e;color:#08090b;font-weight:700;font-size:16px;padding:17px 30px;border-radius:100px;text-decoration:none;transition:box-shadow .25s,transform .25s;" style-hover="transform:translateY(-2px);box-shadow:0 12px 36px rgba(200,255,46,0.32);">
-          Let's Get Building!! <span style="font-family:'JetBrains Mono',monospace;">↗</span>
+          <p class="venture-desc">Global nonprofit rebuilding careers for developers &amp; knowledge workers displaced by AI — reskilling, free NVIDIA/AWS/Google credits, micro-funding &amp; an AI career coach.</p>
         </a>
-        <a href="https://www.linkedin.com/in/mahboobimt" target="_blank" style="display:inline-flex;align-items:center;color:#cfd3da;font-size:15px;padding:17px 26px;border-radius:100px;border:1px solid rgba(255,255,255,0.16);text-decoration:none;transition:border-color .2s,color .2s;" style-hover="border-color:#fff;color:#fff;">LinkedIn</a>
+        <a class="venture" href="https://folioex.com" target="_blank" rel="noopener">
+          <div class="venture-top">
+            <span class="venture-tag">CTO</span>
+            <span class="venture-arrow">↗</span>
+          </div>
+          <div>
+            <div class="venture-name">Folioex</div>
+            <div class="venture-url">folioex.com</div>
+          </div>
+          <p class="venture-desc">Mutual funds, but for crypto. Expert-designed strategies and integrated AI for investors who prefer structure over speculation.</p>
+        </a>
+        <a class="venture" href="https://cohortea.com" target="_blank" rel="noopener">
+          <div class="venture-top">
+            <span class="venture-tag">Co-Founder</span>
+            <span class="venture-arrow">↗</span>
+          </div>
+          <div>
+            <div class="venture-name">Cohortea</div>
+            <div class="venture-url">cohortea.com</div>
+          </div>
+          <p class="venture-desc">Outsourced DevRel &amp; community engineering that drives the only traction that matters: real applications and contracts deployed.</p>
+        </a>
+        <a class="venture" href="https://labcritics.com" target="_blank" rel="noopener">
+          <div class="venture-top">
+            <span class="venture-tag">Editor · Analyst</span>
+            <span class="venture-arrow">↗</span>
+          </div>
+          <div>
+            <div class="venture-name">Labcritics</div>
+            <div class="venture-url">labcritics.com</div>
+          </div>
+          <p class="venture-desc">The largest dataset of lab-equipment users — deeptech, automation &amp; DeSci discovery, an unbiased resource researchers depend on.</p>
+        </a>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:36px;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#8c909a;">
-        <span>mahboob.imtiyaz@gmail.com</span>
-        <span>+91 8123 642 511</span>
-        <span>India · Malaysia</span>
+    </section>
+
+    <section class="section">
+      <div class="section-head wide">
+        <h2>The Full Build Log</h2>
+        <span class="label">// 2010 → present</span>
       </div>
-    </div>
-    <div style="text-align:center;margin-top:54px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5f636c;">
-      Scientist · Reformer · Traveler · Environmentalist · Hands-on Builder
-    </div>
-  </section>
+      <div class="timeline">
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#c8ff2e;--entry-glow:rgba(200,255,46,0.7);"></div>
+          <div class="entry-title">
+            <span class="entry-name">Endangered Devs</span>
+            <span class="entry-badge">Now</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">Managing Director</span>
+            <span>May 2026 — Present</span>
+            <span>India</span>
+          </div>
+          <p class="entry-desc">Building the Endangered Developer Foundation to help developers and white-collar professionals displaced by AI transition into new livelihoods — through reskilling, entrepreneurship support and systemic advocacy.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#c8ff2e;--entry-glow:rgba(200,255,46,0.7);"></div>
+          <div class="entry-title">
+            <span class="entry-name">Folioex</span>
+            <span class="entry-badge">Now</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">Chief Technology Officer</span>
+            <span>Feb 2026 — Present</span>
+            <span>Mumbai</span>
+          </div>
+          <p class="entry-desc">A social financial app for investors who prefer structure over speculation — a safe alternative to exchanges where decisions are made by expert institutions, with integrated AI for high, safe returns.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#c8ff2e;--entry-glow:rgba(200,255,46,0.7);"></div>
+          <div class="entry-title">
+            <span class="entry-name">Cohortea</span>
+            <span class="entry-badge">Now</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">Co-Founder</span>
+            <span>Oct 2025 — Present</span>
+            <span>Bengaluru</span>
+          </div>
+          <p class="entry-desc">After a decade building high-performing engineering teams, founded Cohortea to help leading software &amp; blockchain companies scale developer communities with precision — community engineering and DevRel that drives real deployments.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#c8ff2e;--entry-glow:rgba(200,255,46,0.7);"></div>
+          <div class="entry-title">
+            <span class="entry-name">Labcritics</span>
+            <span class="entry-badge">Now</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">Editor &amp; Deeptech Analyst</span>
+            <span>Feb 2023 — Present</span>
+            <span>Bengaluru</span>
+          </div>
+          <p class="entry-desc">Tracking cutting-edge research tools, breakthroughs, life-science hackathons, automation, regulation and the growing ecosystem of DeSci &amp; deeptech companies — increasingly powered by AI.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#2ee6ff;--entry-glow:rgba(46,230,255,0.6);"></div>
+          <div class="entry-title">
+            <span class="entry-name">Fidociary</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">Head of Development</span>
+            <span>Jun 2024 — Nov 2025</span>
+            <span>Dubai, UAE</span>
+          </div>
+          <p class="entry-desc">Led a multidisciplinary team to build a secure, scalable Web3 hybrid RWA tokenization platform and a chain-agnostic SSI solution — using DIDs and Zero-Knowledge Proofs to minimize repetitive KYC across DeFi.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#2ee6ff;--entry-glow:rgba(46,230,255,0.6);"></div>
+          <div class="entry-title">
+            <span class="entry-name">BitGenix</span>
+            <span class="entry-badge">Stealth</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">Head of Development</span>
+            <span>Jan 2024 — Feb 2025</span>
+            <span>Dubai, UAE</span>
+          </div>
+          <p class="entry-desc">Building the next-gen crypto exchange for security tokens. Later incorporated into Fidociary.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#2ee6ff;--entry-glow:rgba(46,230,255,0.6);"></div>
+          <div class="entry-title">
+            <span class="entry-name">Accuzar</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">Technology Officer</span>
+            <span>Oct 2023 — Apr 2024</span>
+            <span>Ontario, Canada</span>
+          </div>
+          <p class="entry-desc">Building a streamlined accounting and bookkeeping platform.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#2ee6ff;--entry-glow:rgba(46,230,255,0.6);"></div>
+          <div class="entry-title">
+            <span class="entry-name">Cohortea — Crypto Experience</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">DAO1</span>
+            <span>Apr 2021 — Mar 2022</span>
+            <span>Remote</span>
+          </div>
+          <p class="entry-desc">Managed charity and hackathon platforms at DAO1, a community-led socio-economic blockchain architecture; worked across smart contracts, tokenomics, whitepapers, feasibility studies and source-code scanning.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#c8ff2e;--entry-glow:rgba(200,255,46,0.7);"></div>
+          <div class="entry-title">
+            <span class="entry-name">Zraya</span>
+            <span class="entry-badge">Acquired</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">Founder &amp; Director</span>
+            <span>Feb 2016 — Oct 2021</span>
+            <span>Bengaluru</span>
+          </div>
+          <p class="entry-desc">A 3D customization platform using Three.js, Blender, Maya and WebGL with AR and a smart manufacturing automation system — born from the frustration of getting decent personalized furniture.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#c8ff2e;--entry-glow:rgba(200,255,46,0.7);"></div>
+          <div class="entry-title">
+            <span class="entry-name">Apiria Technologies</span>
+            <span class="entry-badge">Acquired</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">PM &amp; Frontend Lead</span>
+            <span>May 2020 — Aug 2021</span>
+            <span>Bangalore</span>
+          </div>
+          <p class="entry-desc">Designed and led the entire payroll and employee-management platform, adding expenses, ESOPs and asset-management functionality.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#2ee6ff;--entry-glow:rgba(46,230,255,0.6);"></div>
+          <div class="entry-title">
+            <span class="entry-name">Volubilis Tech</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">CEO</span>
+            <span>2014 — Feb 2021</span>
+            <span>Bengaluru</span>
+          </div>
+          <p class="entry-desc">Provided remote workers on a co-working / dedicated-resources model and handled small and mid-sized projects from wireframing to marketing.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#2ee6ff;--entry-glow:rgba(46,230,255,0.6);"></div>
+          <div class="entry-title">
+            <span class="entry-name">LabCritics</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">Founder, BD &amp; Editor</span>
+            <span>Sep 2013 — Sep 2020</span>
+            <span>Bangalore</span>
+          </div>
+          <p class="entry-desc">Born out of personal need — reviewing lab tech, services and applications to create an unbiased resource researchers can depend on for important decisions.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#2ee6ff;--entry-glow:rgba(46,230,255,0.6);"></div>
+          <div class="entry-title">
+            <span class="entry-name">Ventive</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">Founding Developer</span>
+            <span>Sep 2014 — Feb 2017</span>
+            <span>Boise, ID</span>
+          </div>
+          <p class="entry-desc">Early employee focused on frontend for WP, Drupal, PHP and Node — shipped nearly two dozen projects across clients including Broadsoft, PracticePal and TitleOne.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#c8ff2e;--entry-glow:rgba(200,255,46,0.7);"></div>
+          <div class="entry-title">
+            <span class="entry-name">KarmaSnap</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">COO &amp; UI/UX</span>
+            <span>Feb 2014 — Jun 2015</span>
+            <span>Dubai</span>
+          </div>
+          <p class="entry-desc">A venture showcasing the ability of people and organizations to do good — handled business &amp; tech, and explored blockchain to circumvent government controls over donations. First mobile-first project.</p>
+          <div class="entry-wins">
+            <span class="win">◆ Citrix Hackathon — 1st Prize · 2014</span>
+            <span class="win">◆ DP World Accelerator</span>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#2ee6ff;--entry-glow:rgba(46,230,255,0.6);"></div>
+          <div class="entry-title">
+            <span class="entry-name">NeighborCity</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">Web Developer</span>
+            <span>Sep 2012 — Oct 2013</span>
+            <span>San Francisco</span>
+          </div>
+          <p class="entry-desc">Revamped a Craigslist-style site in five months — a first-hand experience of the Silicon Valley startup environment.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#2ee6ff;--entry-glow:rgba(46,230,255,0.6);"></div>
+          <div class="entry-title">
+            <span class="entry-name">Innovators4Hire</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">Founder, Developer &amp; CIO</span>
+            <span>Nov 2011 — Nov 2012</span>
+            <span>Bangalore</span>
+          </div>
+          <p class="entry-desc">An early experiment pushing life-science companies toward an open-innovation recruitment model — a precursor to HackerRank / MindSumo.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#2ee6ff;--entry-glow:rgba(46,230,255,0.6);"></div>
+          <div class="entry-title">
+            <span class="entry-name">BioFlukes</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">Founder</span>
+            <span>May 2011 — Sep 2012</span>
+            <span>India</span>
+          </div>
+          <p class="entry-desc">My first own startup — an umbrella for a series of experiments, two of which became the Journal of Errology and Labcritics.</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-dot" style="--entry-dot:#2ee6ff;--entry-glow:rgba(46,230,255,0.6);"></div>
+          <div class="entry-title">
+            <span class="entry-name">Content Cruise</span>
+          </div>
+          <div class="entry-meta">
+            <span class="role">Software &amp; Web Developer</span>
+            <span>Jun 2011 — Dec 2011</span>
+            <span>India</span>
+          </div>
+          <p class="entry-desc">Content manager and web developer; handled extensive SEO optimization for clients.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="section-head small tight">
+        <h2>Corporate Experience</h2>
+        <span class="label">// enterprise track</span>
+      </div>
+      <div class="cards-2">
+        <div class="corp">
+          <div class="corp-name">Halliburton</div>
+          <div class="corp-meta">
+            <span class="role">Development Lead</span>
+            <span>Sep 2020 — Oct 2021</span>
+            <span>Bangalore</span>
+          </div>
+          <p class="corp-desc">Lead developer upgrading well-drilling visualization from 2D to 3D with a WebGL application for real-time drilling decisions and projections.</p>
+        </div>
+        <div class="corp">
+          <div class="corp-name">Genpact — Empower Research</div>
+          <div class="corp-meta">
+            <span class="role">Analyst</span>
+            <span>2010 — 2011</span>
+            <span>India</span>
+          </div>
+          <p class="corp-desc">Research and analytics at enterprise scale — where the journey started.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section triple">
+      <div class="triple-grid">
+
+        <div class="panel">
+          <div class="panel-head">Top Skills</div>
+          <div class="skill-row">Director-level Leadership</div>
+          <div class="skill-row">Community Building</div>
+          <div class="skill-row">Developer Relations</div>
+          <div class="panel-head cyan">Certifications</div>
+          <div class="cert-row">Effective Presentation Skills</div>
+          <div class="cert-row">Strategic Thinking</div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">Languages</div>
+          <div class="lang-row">
+            <span class="lang-name">English</span>
+            <span class="lang-level">Full Professional</span>
+          </div>
+          <div class="lang-row">
+            <span class="lang-name">Hindi</span>
+            <span class="lang-level">Full Professional</span>
+          </div>
+          <div class="lang-row">
+            <span class="lang-name">Urdu</span>
+            <span class="lang-level">Full Professional</span>
+          </div>
+          <div class="lang-row">
+            <span class="lang-name">Kannada</span>
+            <span class="lang-level">Limited Working</span>
+          </div>
+          <div class="lang-row">
+            <span class="lang-name">Arabic</span>
+            <span class="lang-level">Limited Working</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">Education</div>
+          <div class="edu-row">
+            <div class="edu-school">Visvesvaraya Technological University</div>
+            <div class="edu-degree">BEng, Biotechnology</div>
+            <div class="edu-years">2006 — 2009</div>
+          </div>
+          <div class="edu-row">
+            <div class="edu-school">Dayananda Sagar College of Engineering</div>
+            <div class="edu-degree">PUC, PCMB</div>
+            <div class="edu-years">2003 — 2005</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section mission">
+      <div class="mission-band">
+        <div class="mission-eyebrow">// Mission</div>
+        <p class="mission-statement">
+          Obsessed with removing the bottlenecks that slow scientific progress — building tools that let researchers, founders and creators move faster. <span class="accent">Decentralized is the way.</span>
+        </p>
+        <div class="mission-cta">
+          <a class="btn-primary" href="https://cal.com/mahboob/secret" target="_blank" rel="noopener">
+            Let's Get Building!! <span class="btn-arrow">↗</span>
+          </a>
+          <a class="btn-ghost" href="https://www.linkedin.com/in/mahboobimt" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="contact">
+          <span>mahboob.imtiyaz@gmail.com</span>
+          <span>+91 8123 642 511</span>
+          <span>India · Malaysia</span>
+        </div>
+      </div>
+      <div class="footer-tags">
+        Scientist · Reformer · Traveler · Environmentalist · Hands-on Builder
+      </div>
+    </section>
 
   </div>
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  renderVals() {
-    return {
-      tags: [
-        'DeSci Builder', 'DevRel & Community Engineering', 'Full-Stack · self-taught',
-        'Web3 · ZK · DiD', '0 → Growth'
-      ],
-      stats: [
-        { num: '20+', label: 'Ventures founded & built' },
-        { num: '16 yrs', label: 'Shipping 0 → 1' },
-        { num: '1', label: 'Acquisition (Zraya)' },
-        { num: '3', label: 'Continents operated' }
-      ],
-      building: [
-        { name: 'Unblock Research', url: 'unblockresearch.com', href: 'https://unblockresearch.com', tag: 'DeSci', desc: 'Decentralized identity & research platform — fixing the issues that have ailed research for the past 100 years.' },
-        { name: 'Endangered.dev', url: 'endangered.dev', href: 'https://endangered.dev', tag: 'Managing Director', desc: 'Global nonprofit rebuilding careers for developers & knowledge workers displaced by AI — reskilling, free NVIDIA/AWS/Google credits, micro-funding & an AI career coach.' },
-        { name: 'Folioex', url: 'folioex.com', href: 'https://folioex.com', tag: 'CTO', desc: 'Mutual funds, but for crypto. Expert-designed strategies and integrated AI for investors who prefer structure over speculation.' },
-        { name: 'Cohortea', url: 'cohortea.com', href: 'https://cohortea.com', tag: 'Co-Founder', desc: 'Outsourced DevRel & community engineering that drives the only traction that matters: real applications and contracts deployed.' },
-        { name: 'Labcritics', url: 'labcritics.com', href: 'https://labcritics.com', tag: 'Editor · Analyst', desc: 'The largest dataset of lab-equipment users — deeptech, automation & DeSci discovery, an unbiased resource researchers depend on.' }
-      ],
-      timeline: [
-        { company: 'Endangered Devs', role: 'Managing Director', period: 'May 2026 — Present', location: 'India', badge: 'Now', dot: '#c8ff2e', glow: 'rgba(200,255,46,0.7)', desc: 'Building the Endangered Developer Foundation to help developers and white-collar professionals displaced by AI transition into new livelihoods — through reskilling, entrepreneurship support and systemic advocacy.' },
-        { company: 'Folioex', role: 'Chief Technology Officer', period: 'Feb 2026 — Present', location: 'Mumbai', badge: 'Now', dot: '#c8ff2e', glow: 'rgba(200,255,46,0.7)', desc: 'A social financial app for investors who prefer structure over speculation — a safe alternative to exchanges where decisions are made by expert institutions, with integrated AI for high, safe returns.' },
-        { company: 'Cohortea', role: 'Co-Founder', period: 'Oct 2025 — Present', location: 'Bengaluru', badge: 'Now', dot: '#c8ff2e', glow: 'rgba(200,255,46,0.7)', desc: 'After a decade building high-performing engineering teams, founded Cohortea to help leading software & blockchain companies scale developer communities with precision — community engineering and DevRel that drives real deployments.' },
-        { company: 'Labcritics', role: 'Editor & Deeptech Analyst', period: 'Feb 2023 — Present', location: 'Bengaluru', badge: 'Now', dot: '#c8ff2e', glow: 'rgba(200,255,46,0.7)', desc: 'Tracking cutting-edge research tools, breakthroughs, life-science hackathons, automation, regulation and the growing ecosystem of DeSci & deeptech companies — increasingly powered by AI.' },
-        { company: 'Fidociary', role: 'Head of Development', period: 'Jun 2024 — Nov 2025', location: 'Dubai, UAE', dot: '#2ee6ff', glow: 'rgba(46,230,255,0.6)', desc: 'Led a multidisciplinary team to build a secure, scalable Web3 hybrid RWA tokenization platform and a chain-agnostic SSI solution — using DIDs and Zero-Knowledge Proofs to minimize repetitive KYC across DeFi.' },
-        { company: 'BitGenix', role: 'Head of Development', period: 'Jan 2024 — Feb 2025', location: 'Dubai, UAE', badge: 'Stealth', dot: '#2ee6ff', glow: 'rgba(46,230,255,0.6)', desc: 'Building the next-gen crypto exchange for security tokens. Later incorporated into Fidociary.' },
-        { company: 'Accuzar', role: 'Technology Officer', period: 'Oct 2023 — Apr 2024', location: 'Ontario, Canada', dot: '#2ee6ff', glow: 'rgba(46,230,255,0.6)', desc: 'Building a streamlined accounting and bookkeeping platform.' },
-        { company: 'Cohortea — Crypto Experience', role: 'DAO1', period: 'Apr 2021 — Mar 2022', location: 'Remote', dot: '#2ee6ff', glow: 'rgba(46,230,255,0.6)', desc: 'Managed charity and hackathon platforms at DAO1, a community-led socio-economic blockchain architecture; worked across smart contracts, tokenomics, whitepapers, feasibility studies and source-code scanning.' },
-        { company: 'Zraya', role: 'Founder & Director', period: 'Feb 2016 — Oct 2021', location: 'Bengaluru', badge: 'Acquired', dot: '#c8ff2e', glow: 'rgba(200,255,46,0.7)', desc: 'A 3D customization platform using Three.js, Blender, Maya and WebGL with AR and a smart manufacturing automation system — born from the frustration of getting decent personalized furniture.' },
-        { company: 'Apiria Technologies', role: 'PM & Frontend Lead', period: 'May 2020 — Aug 2021', location: 'Bangalore', badge: 'Acquired', dot: '#c8ff2e', glow: 'rgba(200,255,46,0.7)', desc: 'Designed and led the entire payroll and employee-management platform, adding expenses, ESOPs and asset-management functionality.' },
-        { company: 'Volubilis Tech', role: 'CEO', period: '2014 — Feb 2021', location: 'Bengaluru', dot: '#2ee6ff', glow: 'rgba(46,230,255,0.6)', desc: 'Provided remote workers on a co-working / dedicated-resources model and handled small and mid-sized projects from wireframing to marketing.' },
-        { company: 'LabCritics', role: 'Founder, BD & Editor', period: 'Sep 2013 — Sep 2020', location: 'Bangalore', dot: '#2ee6ff', glow: 'rgba(46,230,255,0.6)', desc: 'Born out of personal need — reviewing lab tech, services and applications to create an unbiased resource researchers can depend on for important decisions.' },
-        { company: 'Ventive', role: 'Founding Developer', period: 'Sep 2014 — Feb 2017', location: 'Boise, ID', dot: '#2ee6ff', glow: 'rgba(46,230,255,0.6)', desc: 'Early employee focused on frontend for WP, Drupal, PHP and Node — shipped nearly two dozen projects across clients including Broadsoft, PracticePal and TitleOne.' },
-        { company: 'KarmaSnap', role: 'COO & UI/UX', period: 'Feb 2014 — Jun 2015', location: 'Dubai', dot: '#c8ff2e', glow: 'rgba(200,255,46,0.7)', desc: 'A venture showcasing the ability of people and organizations to do good — handled business & tech, and explored blockchain to circumvent government controls over donations. First mobile-first project.', wins: ['Citrix Hackathon — 1st Prize · 2014', 'DP World Accelerator'] },
-        { company: 'NeighborCity', role: 'Web Developer', period: 'Sep 2012 — Oct 2013', location: 'San Francisco', dot: '#2ee6ff', glow: 'rgba(46,230,255,0.6)', desc: 'Revamped a Craigslist-style site in five months — a first-hand experience of the Silicon Valley startup environment.' },
-        { company: 'Innovators4Hire', role: 'Founder, Developer & CIO', period: 'Nov 2011 — Nov 2012', location: 'Bangalore', dot: '#2ee6ff', glow: 'rgba(46,230,255,0.6)', desc: 'An early experiment pushing life-science companies toward an open-innovation recruitment model — a precursor to HackerRank / MindSumo.' },
-        { company: 'BioFlukes', role: 'Founder', period: 'May 2011 — Sep 2012', location: 'India', dot: '#2ee6ff', glow: 'rgba(46,230,255,0.6)', desc: 'My first own startup — an umbrella for a series of experiments, two of which became the Journal of Errology and Labcritics.' },
-        { company: 'Content Cruise', role: 'Software & Web Developer', period: 'Jun 2011 — Dec 2011', location: 'India', dot: '#2ee6ff', glow: 'rgba(46,230,255,0.6)', desc: 'Content manager and web developer; handled extensive SEO optimization for clients.' }
-      ],
-      corporate: [
-        { company: 'Halliburton', role: 'Development Lead', period: 'Sep 2020 — Oct 2021', location: 'Bangalore', desc: 'Lead developer upgrading well-drilling visualization from 2D to 3D with a WebGL application for real-time drilling decisions and projections.' },
-        { company: 'Genpact — Empower Research', role: 'Analyst', period: '2010 — 2011', location: 'India', desc: 'Research and analytics at enterprise scale — where the journey started.' }
-      ],
-      skills: ['Director-level Leadership', 'Community Building', 'Developer Relations'],
-      certs: ['Effective Presentation Skills', 'Strategic Thinking'],
-      languages: [
-        { name: 'English', level: 'Full Professional' },
-        { name: 'Hindi', level: 'Full Professional' },
-        { name: 'Urdu', level: 'Full Professional' },
-        { name: 'Kannada', level: 'Limited Working' },
-        { name: 'Arabic', level: 'Limited Working' }
-      ],
-      education: [
-        { school: 'Visvesvaraya Technological University', degree: 'BEng, Biotechnology', years: '2006 — 2009' },
-        { school: 'Dayananda Sagar College of Engineering', degree: 'PUC, PCMB', years: '2003 — 2005' }
-      ]
-    };
-  }
-}
-</script>
 </body>
 </html>
